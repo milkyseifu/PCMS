@@ -5,7 +5,7 @@
 @section('breadcrumb-item')
     <li class="breadcrumb-item"><a href="{{route('pc.home')}}">Home</a></li>
     <li class="breadcrumb-item"><a href="{{route('pc.index')}}">PC</a></li>
-    <li class="breadcrumb-item">Add</li>
+    <li class="breadcrumb-item">Search</li>
 @endsection
 
 @section('content')
@@ -23,16 +23,14 @@
         <h2 class="text-center display-4">Search</h2>
         <div class="row">
             <div class="col-md-8 offset-md-2">
-                {{-- <form> --}}
-                    <div class="input-group">
-                        <input type="search" class="form-control form-control-lg" id="pcSearchInput" placeholder="Search by ID or Phone Number">
-                        <div class="input-group-append">
-                            <button class="btn btn-lg btn-default" id="searchpc">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </div>
+                <div class="input-group">
+                    <input type="search" class="form-control form-control-lg" id="pcSearchInput" placeholder="Search by ID or Phone Number">
+                    <div class="input-group-append">
+                        <button class="btn btn-lg btn-default" id="searchpc">
+                            <i class="fa fa-search"></i>
+                        </button>
                     </div>
-                {{-- </form> --}}
+                </div>
             </div>
         </div>
     </div>
@@ -40,7 +38,7 @@
 <br>
 <br>
 <div class="row">
-    <div class="col-md-8 mx-auto">
+    <div class="col-md-8 mx-auto" id="section--1">
       
     </div>
 </div>
@@ -48,7 +46,7 @@
 
 @section('scripts')
     <script>
-      $('#searchpc').on('click',function(){
+      $('#searchpc').on('click',function(e){
         jQuery('.mx-auto').html('');
         fetchPcOwner();
       });
@@ -123,6 +121,10 @@
                 </div>'
               );
             }
+            const section1 = document.querySelector('#section--1');
+            section1.scrollIntoView({
+              behavior: 'smooth'
+            });
           }
         });
       }
