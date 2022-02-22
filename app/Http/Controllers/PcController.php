@@ -20,6 +20,7 @@ class PcController extends Controller
      */
     public function index()
     {
+        dd('dfsd');
         $i = 1;
         $pc = Pc::all();
         $data = array('pc'=>$pc, 'i'=>$i);

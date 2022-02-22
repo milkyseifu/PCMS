@@ -67,7 +67,7 @@
                     <td>{{ $item->first_name }} {{ $item->last_name }}</td>
                     <td><span class="{{ $item->type->name == 'student' ? 'badge badge-warning': ($item->type->name == 'staff' ? 'badge badge-success': 'badge badge-danger') }} ">{{ $item->type->name }}</span></td>
                     <td>
-                    <div class="sparkbar" data-color="#00a65a" data-height="20">{{ count($item->pcTypes) }}</div>
+                      <div class="sparkbar" data-color="#00a65a" data-height="20">{{ count($item->pcTypes) }}</div>
                     </td>
                 </tr>
               @endforeach
